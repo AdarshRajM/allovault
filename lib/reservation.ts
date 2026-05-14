@@ -93,7 +93,7 @@ export async function releaseReservation(reservationId: string) {
     // 1. Update reservation status
     const updated = await tx.reservation.update({
       where: { id: reservationId },
-      data: { status: 'EXPIRED' },
+      data: { status: 'RELEASED' },
     });
 
     // 2. Release reserved stock
